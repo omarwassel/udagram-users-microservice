@@ -32,8 +32,8 @@ $RECYCLE.BIN/
 postgres_dev/
 logfile
 
-Deployment.yaml
-service.yaml
+# Deployment.yaml
+# service.yaml
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate

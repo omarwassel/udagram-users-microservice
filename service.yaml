@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: udagram-users-service
   labels:
-    run: user-service
+    service: udagram-users-api-v0
+  name: udagram-users-api-v0
 spec:
   ports:
-  - port: 3030
-    protocol: TCP
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
   selector:
-    run: user-service
+    service: udagram-users-api-v0
