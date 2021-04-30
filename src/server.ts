@@ -1,5 +1,5 @@
 import cors from 'cors';
-import express from 'express';
+import express, { Request, Response } from 'express';
 import {sequelize} from './sequelize';
 
 import {UserRouter} from './controller/v0/users/routes/user.router';
@@ -29,12 +29,12 @@ import {V0_USER_MODELS} from './controller/v0/model.index';
     origin: config.url,
   }));
 
-  app.use('/api/v0/users', UserRouter );
+  app.get('/health', async (req: Request, res: Response) => {
+    // Health check
+    res.status(200).send('All clear')
+  });
 
-  // Root URI call
-  app.get( '/', async ( req, res ) => {
-    res.send( '/api/v0/' );
-  } );
+  app.use('/', UserRouter);
 
 
   // Start the Server
