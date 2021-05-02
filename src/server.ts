@@ -19,15 +19,15 @@ import {V0_USER_MODELS} from './controller/v0/model.index';
 
   app.use(bodyParser.json());
 
-  app.use(cors({
-    allowedHeaders: [
-      'Origin', 'X-Requested-With',
-      'Content-Type', 'Accept',
-      'X-Access-Token', 'Authorization',
-    ],
-    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-    origin: config.url,
-  }));
+  // app.use(cors({
+  //   allowedHeaders: [
+  //     'Origin', 'X-Requested-With',
+  //     'Content-Type', 'Accept',
+  //     'X-Access-Token', 'Authorization',
+  //   ],
+  //   methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  //   origin: config.url,
+  // }));
 
   app.get('/health', async (req: Request, res: Response) => {
     // Health check
