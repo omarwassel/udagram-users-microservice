@@ -5,9 +5,10 @@ import {AuthRouter} from './auth.router';
 
 const router: Router = Router();
 
+router.get('/');
 router.use('/auth', AuthRouter);
 
-router.get('/');
+
 
 router.get('/:id', async (req: Request, res: Response) => {
   const {id} = req.params;
